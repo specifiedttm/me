@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>hi</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,8 +11,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: #050505;
@@ -20,375 +28,1449 @@
       overflow-x: hidden;
     }
 
+
+    /* =========================
+       HERO
+    ========================== */
+
     .hero {
       position: relative;
+
       width: 100%;
       height: 100vh;
+
       overflow: hidden;
+
       background-image:
-        linear-gradient(rgba(0,0,0,.30), rgba(0,0,0,.55)),
+        linear-gradient(
+          rgba(0, 0, 0, .30),
+          rgba(0, 0, 0, .55)
+        ),
         url("2026-07-20_15.04.21.png");
+
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
 
+
     .hero::after {
       content: "";
+
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, transparent 20%, rgba(0,0,0,.55) 100%);
+
+      background:
+        radial-gradient(
+          circle at center,
+          transparent 20%,
+          rgba(0, 0, 0, .55) 100%
+        );
+
       pointer-events: none;
     }
+
+
+    /* =========================
+       INTRO TEXT
+    ========================== */
 
     .text {
       position: absolute;
       z-index: 2;
+
       left: 50%;
       top: 50%;
+
       font-size: clamp(42px, 6vw, 105px);
       font-weight: 900;
+
       white-space: nowrap;
+
       letter-spacing: -3px;
-      text-shadow: 0 6px 30px rgba(0,0,0,.9), 0 0 50px rgba(0,0,0,.5);
+
+      text-shadow:
+        0 6px 30px rgba(0, 0, 0, .9),
+        0 0 50px rgba(0, 0, 0, .5);
+
       opacity: 0;
+
       animation-duration: 2.4s;
       animation-fill-mode: forwards;
-      animation-timing-function: cubic-bezier(.16,.8,.25,1);
+      animation-timing-function:
+        cubic-bezier(.16, .8, .25, 1);
     }
 
-    .line1 { animation-name: line1; }
-    .line2 { animation-name: line2; animation-delay: .12s; }
-    .line3 { animation-name: line3; animation-delay: .24s; }
-    .line4 { animation-name: line4; animation-delay: .36s; }
+
+    .line1 {
+      animation-name: line1;
+    }
+
+    .line2 {
+      animation-name: line2;
+      animation-delay: .12s;
+    }
+
+    .line3 {
+      animation-name: line3;
+      animation-delay: .24s;
+    }
+
+    .line4 {
+      animation-name: line4;
+      animation-delay: .36s;
+    }
+
 
     @keyframes line1 {
-      0% { transform: translate(-130vw, -80vh) rotate(-30deg) scale(.4); opacity: 0; }
-      65% { opacity: 1; }
-      100% { transform: translate(-50%, calc(-50% - 145px)) rotate(0) scale(1); opacity: 1; }
+
+      0% {
+        transform:
+          translate(-130vw, -80vh)
+          rotate(-30deg)
+          scale(.4);
+
+        opacity: 0;
+      }
+
+      65% {
+        opacity: 1;
+      }
+
+      100% {
+        transform:
+          translate(-50%, calc(-50% - 145px))
+          rotate(0)
+          scale(1);
+
+        opacity: 1;
+      }
+
     }
+
 
     @keyframes line2 {
-      0% { transform: translate(110vw, -70vh) rotate(25deg) scale(.4); opacity: 0; }
-      100% { transform: translate(-50%, calc(-50% - 50px)) rotate(0) scale(1); opacity: 1; }
+
+      0% {
+        transform:
+          translate(110vw, -70vh)
+          rotate(25deg)
+          scale(.4);
+
+        opacity: 0;
+      }
+
+      100% {
+        transform:
+          translate(-50%, calc(-50% - 50px))
+          rotate(0)
+          scale(1);
+
+        opacity: 1;
+      }
+
     }
+
 
     @keyframes line3 {
-      0% { transform: translate(-100vw, 80vh) rotate(22deg) scale(.4); opacity: 0; }
-      100% { transform: translate(-50%, calc(-50% + 50px)) rotate(0) scale(1); opacity: 1; }
+
+      0% {
+        transform:
+          translate(-100vw, 80vh)
+          rotate(22deg)
+          scale(.4);
+
+        opacity: 0;
+      }
+
+      100% {
+        transform:
+          translate(-50%, calc(-50% + 50px))
+          rotate(0)
+          scale(1);
+
+        opacity: 1;
+      }
+
     }
 
+
     @keyframes line4 {
-      0% { transform: translate(110vw, 90vh) rotate(-20deg) scale(.4); opacity: 0; }
-      100% { transform: translate(-50%, calc(-50% + 145px)) rotate(0) scale(1); opacity: 1; }
+
+      0% {
+        transform:
+          translate(110vw, 90vh)
+          rotate(-20deg)
+          scale(.4);
+
+        opacity: 0;
+      }
+
+      100% {
+        transform:
+          translate(-50%, calc(-50% + 145px))
+          rotate(0)
+          scale(1);
+
+        opacity: 1;
+      }
+
     }
+
+
+    /* =========================
+       SCROLL INDICATOR
+    ========================== */
 
     .scroll {
       position: absolute;
       z-index: 3;
+
       left: 50%;
       bottom: 32px;
+
       transform: translateX(-50%);
+
       text-align: center;
+
       font-size: 12px;
       font-weight: 700;
+
       letter-spacing: 4px;
       text-transform: uppercase;
+
       opacity: .7;
-      animation: scrollFloat 1.7s ease-in-out infinite;
+
+      animation:
+        scrollFloat 1.7s ease-in-out infinite;
     }
 
-    .scroll-arrow { font-size: 28px; margin-top: 4px; }
+
+    .scroll-arrow {
+      font-size: 28px;
+      margin-top: 4px;
+    }
+
 
     @keyframes scrollFloat {
-      0%,100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(10px); }
+
+      0%,
+      100% {
+        transform:
+          translateX(-50%)
+          translateY(0);
+      }
+
+      50% {
+        transform:
+          translateX(-50%)
+          translateY(10px);
+      }
+
     }
+
+
+    /* =========================
+       MACEFUL SECTION
+    ========================== */
 
     .maceful-section {
       position: relative;
+
       min-height: 100vh;
-      padding: 110px clamp(20px, 6vw, 100px);
-      background: radial-gradient(circle at 50% 0%, #1d1d1d 0%, #080808 45%, #030303 100%);
+
+      padding:
+        110px
+        clamp(20px, 6vw, 100px);
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          #1d1d1d 0%,
+          #080808 45%,
+          #030303 100%
+        );
+
       overflow: hidden;
     }
 
+
     .maceful-section::before {
       content: "";
+
       position: absolute;
+
       width: 700px;
       height: 700px;
+
       top: -300px;
       left: 50%;
+
       transform: translateX(-50%);
-      background: rgba(255,0,0,.12);
+
+      background:
+        rgba(255, 0, 0, .12);
+
       filter: blur(140px);
+
       border-radius: 50%;
     }
+
+
+    /* =========================
+       MACEFUL HEADER
+    ========================== */
 
     .maceful-header {
       position: relative;
       z-index: 2;
+
       text-align: center;
+
       max-width: 1000px;
-      margin: auto auto 80px;
+
+      margin:
+        auto
+        auto
+        80px;
     }
+
 
     .maceful-logo {
-      width: clamp(130px, 15vw, 220px);
-      filter: drop-shadow(0 20px 35px rgba(0,0,0,.7));
+      width:
+        clamp(130px, 15vw, 220px);
+
+      filter:
+        drop-shadow(
+          0 20px 35px
+          rgba(0, 0, 0, .7)
+        );
+
       opacity: 0;
-      transform: translateY(60px) scale(.75) rotate(-8deg);
-      transition: opacity .9s ease, transform 1s cubic-bezier(.15,.8,.2,1);
+
+      transform:
+        translateY(60px)
+        scale(.75)
+        rotate(-8deg);
+
+      transition:
+        opacity .9s ease,
+        transform 1s
+        cubic-bezier(.15, .8, .2, 1);
     }
 
-    .maceful-header.visible .maceful-logo {
+
+    .maceful-header.visible
+    .maceful-logo {
+
       opacity: 1;
-      transform: translateY(0) scale(1) rotate(0);
+
+      transform:
+        translateY(0)
+        scale(1)
+        rotate(0);
     }
+
 
     .small-title {
       margin-top: 28px;
-      font-size: clamp(15px, 1.3vw, 20px);
+
+      font-size:
+        clamp(15px, 1.3vw, 20px);
+
       letter-spacing: 6px;
+
       text-transform: uppercase;
+
       opacity: .55;
     }
 
+
     .maceful-title {
-      margin: 8px 0 20px;
-      font-size: clamp(45px, 7vw, 115px);
+      margin:
+        8px 0 20px;
+
+      font-size:
+        clamp(45px, 7vw, 115px);
+
       font-weight: 900;
+
       letter-spacing: -5px;
+
       line-height: .95;
+
       opacity: 0;
-      transform: translateY(60px);
-      transition: opacity .9s ease .1s, transform .9s ease .1s;
+
+      transform:
+        translateY(60px);
+
+      transition:
+        opacity .9s ease .1s,
+        transform .9s ease .1s;
     }
 
-    .maceful-header.visible .maceful-title {
+
+    .maceful-header.visible
+    .maceful-title {
+
       opacity: 1;
-      transform: translateY(0);
+
+      transform:
+        translateY(0);
     }
+
 
     .maceful-description {
       max-width: 720px;
+
       margin: auto;
-      font-size: clamp(15px, 1.5vw, 20px);
+
+      font-size:
+        clamp(15px, 1.5vw, 20px);
+
       line-height: 1.8;
+
       color: #cfcfcf;
+
       opacity: 0;
-      transform: translateY(40px);
-      transition: .9s ease .25s;
+
+      transform:
+        translateY(40px);
+
+      transition:
+        .9s ease .25s;
     }
 
-    .maceful-header.visible .maceful-description {
+
+    .maceful-header.visible
+    .maceful-description {
+
       opacity: 1;
-      transform: translateY(0);
+
+      transform:
+        translateY(0);
     }
+
+
+    /* =========================
+       STATS
+    ========================== */
 
     .stats {
       position: relative;
       z-index: 2;
+
       max-width: 1100px;
-      margin: 0 auto 120px;
+
+      margin:
+        0 auto 120px;
+
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 20px;
     }
 
+
     .stat {
-      padding: 38px 20px;
+      padding:
+        38px 20px;
+
       text-align: center;
-      border: 1px solid rgba(255,255,255,.10);
-      background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.015));
+
+      border:
+        1px solid
+        rgba(255, 255, 255, .10);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, .07),
+          rgba(255, 255, 255, .015)
+        );
+
       border-radius: 22px;
-      backdrop-filter: blur(15px);
+
+      backdrop-filter:
+        blur(15px);
+
       opacity: 0;
-      transform: translateY(70px) scale(.9);
-      transition: transform .8s cubic-bezier(.15,.8,.2,1), opacity .8s ease, border-color .25s ease;
+
+      transform:
+        translateY(70px)
+        scale(.9);
+
+      transition:
+        transform .8s
+        cubic-bezier(.15, .8, .2, 1),
+
+        opacity .8s ease,
+
+        border-color .25s ease;
     }
 
-    .stat.visible { opacity: 1; transform: translateY(0) scale(1); }
-    .stat:hover { transform: translateY(-10px) scale(1.02); border-color: rgba(255,255,255,.28); }
+
+    .stat.visible {
+      opacity: 1;
+
+      transform:
+        translateY(0)
+        scale(1);
+    }
+
+
+    .stat:hover {
+      transform:
+        translateY(-10px)
+        scale(1.02);
+
+      border-color:
+        rgba(255, 255, 255, .28);
+    }
+
 
     .stat-number {
-      font-size: clamp(42px, 5vw, 75px);
+      font-size:
+        clamp(42px, 5vw, 75px);
+
       font-weight: 900;
+
       letter-spacing: -3px;
     }
 
+
     .stat-label {
       margin-top: 8px;
+
       font-size: 12px;
+
       letter-spacing: 3px;
+
       text-transform: uppercase;
+
       color: #9d9d9d;
     }
+
+
+    /* =========================
+       IMAGE SHOWCASE
+    ========================== */
 
     .showcase {
       position: relative;
       z-index: 2;
+
       max-width: 1450px;
+
       margin: auto;
+
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
+
+      grid-template-columns:
+        repeat(12, 1fr);
+
       gap: 25px;
     }
 
+
     .image-card {
       position: relative;
+
       overflow: hidden;
+
       border-radius: 24px;
+
       opacity: 0;
-      border: 1px solid rgba(255,255,255,.1);
-      box-shadow: 0 30px 80px rgba(0,0,0,.55);
-      transition: transform 1s cubic-bezier(.15,.8,.2,1), opacity 1s ease;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, .1);
+
+      box-shadow:
+        0 30px 80px
+        rgba(0, 0, 0, .55);
+
+      transition:
+        transform 1s
+        cubic-bezier(.15, .8, .2, 1),
+
+        opacity 1s ease;
     }
+
 
     .image-card img {
       width: 100%;
       height: 100%;
+
       display: block;
+
       object-fit: cover;
-      transition: transform .8s cubic-bezier(.15,.8,.2,1), filter .8s ease;
+
+      transition:
+        transform .8s
+        cubic-bezier(.15, .8, .2, 1),
+
+        filter .8s ease;
     }
+
 
     .image-card::after {
       content: "";
+
       position: absolute;
+
       inset: 0;
-      background: linear-gradient(transparent 40%, rgba(0,0,0,.65));
+
+      background:
+        linear-gradient(
+          transparent 40%,
+          rgba(0, 0, 0, .65)
+        );
+
       pointer-events: none;
     }
 
-    .image-card:hover img { transform: scale(1.07); }
-    .image-card:hover { z-index: 5; }
+
+    .image-card:hover img {
+      transform:
+        scale(1.07);
+    }
+
+
+    .image-card:hover {
+      z-index: 5;
+    }
+
 
     .image1 {
-      grid-column: 1 / 13;
-      height: clamp(300px, 50vw, 720px);
-      transform: translateY(120px) scale(.92);
+      grid-column:
+        1 / 13;
+
+      height:
+        clamp(
+          300px,
+          50vw,
+          720px
+        );
+
+      transform:
+        translateY(120px)
+        scale(.92);
     }
+
 
     .image2 {
-      grid-column: 1 / 7;
+      grid-column:
+        1 / 7;
+
       height: 420px;
-      transform: translateX(-150px) rotate(-5deg);
+
+      transform:
+        translateX(-150px)
+        rotate(-5deg);
     }
 
+
     .image3 {
-      grid-column: 7 / 13;
+      grid-column:
+        7 / 13;
+
       height: 420px;
-      transform: translateX(150px) rotate(5deg);
+
+      transform:
+        translateX(150px)
+        rotate(5deg);
     }
+
 
     .image-card.visible {
       opacity: 1;
-      transform: translate(0,0) rotate(0) scale(1);
+
+      transform:
+        translate(0, 0)
+        rotate(0)
+        scale(1);
     }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
 
     .footer {
       text-align: center;
-      padding: 120px 20px 70px;
+
+      padding:
+        120px 20px 70px;
+
       font-size: 12px;
+
       letter-spacing: 4px;
+
       text-transform: uppercase;
+
       color: #666;
     }
 
-    @media(max-width: 800px) {
-      .hero { background-attachment: scroll; }
-      .text { font-size: clamp(30px, 8vw, 58px); letter-spacing: -2px; }
-      .stats { grid-template-columns: 1fr; }
-      .image1,.image2,.image3 { grid-column: 1 / 13; height: 300px; }
-      .maceful-title { letter-spacing: -3px; }
+
+    /* =========================
+       DISCLAIMER TICKER
+    ========================== */
+
+    .disclaimer-bar {
+      position: relative;
+
+      z-index: 10;
+
+      width: 100%;
+
+      overflow: hidden;
+
+      padding:
+        18px 0;
+
+      background: #000;
+
+      border-top:
+        1px solid
+        rgba(255, 255, 255, .12);
+
+      border-bottom:
+        1px solid
+        rgba(255, 255, 255, .05);
+
+      white-space: nowrap;
     }
+
+
+    .disclaimer-track {
+      display: flex;
+
+      width: max-content;
+
+      align-items: center;
+
+      animation:
+        disclaimerMove
+        30s
+        linear
+        infinite;
+    }
+
+
+    .disclaimer-item {
+      display: flex;
+
+      align-items: center;
+
+      flex-shrink: 0;
+
+      padding-right: 70px;
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(255, 255, 255, .55);
+    }
+
+
+    .disclaimer-item::after {
+      content: "◆";
+
+      margin-left: 70px;
+
+      font-size: 7px;
+
+      color:
+        rgba(255, 255, 255, .25);
+    }
+
+
+    @keyframes disclaimerMove {
+
+      from {
+        transform:
+          translateX(0);
+      }
+
+      to {
+        transform:
+          translateX(-50%);
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media(max-width: 800px) {
+
+      .hero {
+        background-attachment:
+          scroll;
+      }
+
+
+      .text {
+        font-size:
+          clamp(
+            27px,
+            7.5vw,
+            58px
+          );
+
+        letter-spacing:
+          -2px;
+      }
+
+
+      @keyframes line1 {
+
+        0% {
+          transform:
+            translate(-130vw, -80vh)
+            rotate(-30deg)
+            scale(.4);
+
+          opacity: 0;
+        }
+
+        100% {
+          transform:
+            translate(
+              -50%,
+              calc(-50% - 100px)
+            );
+
+          opacity: 1;
+        }
+
+      }
+
+
+      @keyframes line2 {
+
+        0% {
+          transform:
+            translate(110vw, -70vh)
+            rotate(25deg)
+            scale(.4);
+
+          opacity: 0;
+        }
+
+        100% {
+          transform:
+            translate(
+              -50%,
+              calc(-50% - 35px)
+            );
+
+          opacity: 1;
+        }
+
+      }
+
+
+      @keyframes line3 {
+
+        0% {
+          transform:
+            translate(-100vw, 80vh)
+            rotate(22deg)
+            scale(.4);
+
+          opacity: 0;
+        }
+
+        100% {
+          transform:
+            translate(
+              -50%,
+              calc(-50% + 35px)
+            );
+
+          opacity: 1;
+        }
+
+      }
+
+
+      @keyframes line4 {
+
+        0% {
+          transform:
+            translate(110vw, 90vh)
+            rotate(-20deg)
+            scale(.4);
+
+          opacity: 0;
+        }
+
+        100% {
+          transform:
+            translate(
+              -50%,
+              calc(-50% + 100px)
+            );
+
+          opacity: 1;
+        }
+
+      }
+
+
+      .stats {
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .image1,
+      .image2,
+      .image3 {
+
+        grid-column:
+          1 / 13;
+
+        height: 300px;
+      }
+
+
+      .maceful-title {
+        letter-spacing:
+          -3px;
+      }
+
+
+      .disclaimer-bar {
+        padding:
+          15px 0;
+      }
+
+
+      .disclaimer-item {
+        font-size:
+          10px;
+
+        letter-spacing:
+          1.5px;
+      }
+
+    }
+
+
+    /* =========================
+       REDUCED MOTION
+    ========================== */
+
+    @media (
+      prefers-reduced-motion:
+      reduce
+    ) {
+
+      html {
+        scroll-behavior:
+          auto;
+      }
+
+      .disclaimer-track {
+        animation-duration:
+          60s;
+      }
+
+    }
+
   </style>
 </head>
+
+
 <body>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
   <section class="hero">
-    <div class="text line1">hi</div>
-    <div class="text line2">im from antarctica</div>
-    <div class="text line3">i like cats</div>
-    <div class="text line4">and i do stuff lol</div>
-    <div class="scroll">scroll<div class="scroll-arrow">↓</div></div>
+
+    <div class="text line1">
+      hi
+    </div>
+
+    <div class="text line2">
+      im from antarctica
+    </div>
+
+    <div class="text line3">
+      i like cats
+    </div>
+
+    <div class="text line4">
+      and i do stuff lol
+    </div>
+
+
+    <div class="scroll">
+
+      scroll
+
+      <div class="scroll-arrow">
+        ↓
+      </div>
+
+    </div>
+
   </section>
+
+
+
+  <!-- =========================
+       MACEFUL
+  ========================== -->
 
   <section class="maceful-section">
+
+
     <div class="maceful-header reveal">
-      <img src="maceful.png" class="maceful-logo" alt="Maceful">
-      <div class="small-title">currently</div>
-      <h1 class="maceful-title">OWNING<br>MACEFUL NETWORK</h1>
-      <p class="maceful-description">A Minecraft network built around competitive PvP, custom gameplay, events and a growing community.</p>
+
+      <img
+        src="maceful.png"
+        class="maceful-logo"
+        alt="Maceful"
+      >
+
+
+      <div class="small-title">
+        currently
+      </div>
+
+
+      <h1 class="maceful-title">
+        OWNING<br>
+        MACEFUL NETWORK
+      </h1>
+
+
+      <p class="maceful-description">
+        A Minecraft network built around competitive PvP,
+        custom gameplay, events and a growing community.
+      </p>
+
     </div>
+
+
+
+    <!-- =========================
+         STATS
+    ========================== -->
 
     <div class="stats">
+
+
       <div class="stat reveal">
-        <div class="stat-number counter" data-target="250" data-suffix="+">0</div>
-        <div class="stat-label">Peak CCU</div>
+
+        <div
+          class="stat-number counter"
+          data-target="250"
+          data-suffix="+"
+        >
+          0
+        </div>
+
+        <div class="stat-label">
+          Peak CCU
+        </div>
+
       </div>
+
+
+
       <div class="stat reveal">
-        <div class="stat-number counter" data-target="150" data-prefix="~">0</div>
-        <div class="stat-label">Average CCU</div>
+
+        <div
+          class="stat-number counter"
+          data-target="150"
+          data-prefix="~"
+        >
+          0
+        </div>
+
+        <div class="stat-label">
+          Average CCU
+        </div>
+
       </div>
+
+
+
       <div class="stat reveal">
-        <div class="stat-number counter" data-target="4000" data-suffix="+">0</div>
-        <div class="stat-label">Discord Members</div>
+
+        <div
+          class="stat-number counter"
+          data-target="4000"
+          data-suffix="+"
+        >
+          0
+        </div>
+
+        <div class="stat-label">
+          Discord Members
+        </div>
+
       </div>
+
+
     </div>
+
+
+
+    <!-- =========================
+         IMAGES
+    ========================== -->
 
     <div class="showcase">
-      <div class="image-card image1 reveal"><img src="macefuldcbanner.png" alt="Maceful Network"></div>
-      <div class="image-card image2 reveal"><img src="imagetuff1.webp" alt="Maceful Network"></div>
-      <div class="image-card image3 reveal"><img src="imagetuff.webp" alt="Maceful Network"></div>
+
+
+      <div
+        class="image-card image1 reveal"
+      >
+
+        <img
+          src="macefuldcbanner.png"
+          alt="Maceful Network"
+        >
+
+      </div>
+
+
+
+      <div
+        class="image-card image2 reveal"
+      >
+
+        <img
+          src="imagetuff1.webp"
+          alt="Maceful Network"
+        >
+
+      </div>
+
+
+
+      <div
+        class="image-card image3 reveal"
+      >
+
+        <img
+          src="imagetuff.webp"
+          alt="Maceful Network"
+        >
+
+      </div>
+
+
     </div>
 
-    <div class="footer">Maceful Network</div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+      Maceful Network
+    </div>
+
+
   </section>
 
+
+
+  <!-- =========================
+       MOJANG DISCLAIMER
+  ========================== -->
+
+  <div class="disclaimer-bar">
+
+    <div class="disclaimer-track">
+
+
+      <div class="disclaimer-item">
+        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
+      </div>
+
+
+      <div class="disclaimer-item">
+        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
+      </div>
+
+
+      <div class="disclaimer-item">
+        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
+      </div>
+
+
+      <div class="disclaimer-item">
+        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
+      </div>
+
+
+      <!-- DUPLICATES FOR SMOOTH LOOP -->
+
+
+      <div class="disclaimer-item">
+        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
+      </div>
+
+
+      <div class="disclaimer-item">
+        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
+      </div>
+
+
+      <div class="disclaimer-item">
+        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
+      </div>
+
+
+      <div class="disclaimer-item">
+        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
   <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          if(entry.target.classList.contains("stat")) {
-            const counter = entry.target.querySelector(".counter");
-            startCounter(counter);
-          }
+
+    /* =========================
+       SCROLL REVEALS
+    ========================== */
+
+    const observer =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(
+            entry => {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                entry.target
+                  .classList
+                  .add("visible");
+
+
+                if (
+                  entry.target
+                    .classList
+                    .contains("stat")
+                ) {
+
+                  const counter =
+                    entry.target
+                      .querySelector(
+                        ".counter"
+                      );
+
+                  startCounter(
+                    counter
+                  );
+
+                }
+
+              }
+
+            }
+          );
+
+        },
+
+        {
+          threshold: 0.18
         }
-      });
-    }, { threshold: 0.18 });
 
-    document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+      );
 
-    function startCounter(element) {
-      if(element.dataset.started) return;
-      element.dataset.started = true;
-      const target = Number(element.dataset.target);
-      const prefix = element.dataset.prefix || "";
-      const suffix = element.dataset.suffix || "";
-      const duration = 1600;
-      const start = performance.now();
 
-      function update(currentTime) {
-        const progress = Math.min((currentTime - start) / duration, 1);
-        const ease = 1 - Math.pow(1 - progress, 4);
-        const value = Math.floor(target * ease);
-        element.textContent = prefix + value.toLocaleString() + suffix;
-        if(progress < 1) requestAnimationFrame(update);
+    document
+      .querySelectorAll(
+        ".reveal"
+      )
+      .forEach(
+        element => {
+
+          observer.observe(
+            element
+          );
+
+        }
+      );
+
+
+
+    /* =========================
+       NUMBER COUNTERS
+    ========================== */
+
+    function startCounter(
+      element
+    ) {
+
+      if (
+        element.dataset.started
+      ) {
+        return;
       }
 
-      requestAnimationFrame(update);
+
+      element.dataset.started =
+        "true";
+
+
+      const target =
+        Number(
+          element.dataset.target
+        );
+
+
+      const prefix =
+        element.dataset.prefix
+        || "";
+
+
+      const suffix =
+        element.dataset.suffix
+        || "";
+
+
+      const duration =
+        1600;
+
+
+      const start =
+        performance.now();
+
+
+
+      function update(
+        currentTime
+      ) {
+
+        const progress =
+          Math.min(
+
+            (
+              currentTime
+              - start
+            )
+            / duration,
+
+            1
+
+          );
+
+
+        const ease =
+          1 -
+          Math.pow(
+            1 - progress,
+            4
+          );
+
+
+        const value =
+          Math.floor(
+            target * ease
+          );
+
+
+        element.textContent =
+          prefix
+          + value.toLocaleString()
+          + suffix;
+
+
+        if (
+          progress < 1
+        ) {
+
+          requestAnimationFrame(
+            update
+          );
+
+        }
+
+      }
+
+
+      requestAnimationFrame(
+        update
+      );
+
     }
 
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
-      const hero = document.querySelector(".hero");
-      if(scrollY < window.innerHeight) {
-        hero.style.backgroundPosition = `center calc(50% + ${scrollY * .18}px)`;
+
+
+    /* =========================
+       HERO PARALLAX
+    ========================== */
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        const scrollY =
+          window.scrollY;
+
+
+        const hero =
+          document.querySelector(
+            ".hero"
+          );
+
+
+        if (
+          scrollY
+          <
+          window.innerHeight
+        ) {
+
+          hero.style
+            .backgroundPosition =
+            `center calc(50% + ${scrollY * .18}px)`;
+
+        }
+
+      },
+
+      {
+        passive: true
       }
-    });
+
+    );
+
   </script>
+
+
 </body>
 </html>
