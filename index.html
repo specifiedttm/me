@@ -11,15 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-
     * {
       box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
-
-      /* Firefox */
       scrollbar-width: none;
     }
 
@@ -29,12 +26,9 @@
       color: white;
       font-family: "Montserrat", sans-serif;
       overflow-x: hidden;
-
-      /* Edge / old IE */
       -ms-overflow-style: none;
     }
 
-    /* Chrome / Edge / Safari */
     html::-webkit-scrollbar,
     body::-webkit-scrollbar {
       display: none;
@@ -42,17 +36,12 @@
       height: 0;
     }
 
-
-
-    /* =========================
-       HERO
-    ========================== */
+    /* HERO */
 
     .hero {
       position: relative;
       width: 100%;
       height: 100vh;
-
       overflow: hidden;
 
       background-image:
@@ -67,10 +56,8 @@
       background-attachment: fixed;
     }
 
-
     .hero::after {
       content: "";
-
       position: absolute;
       inset: 0;
 
@@ -84,24 +71,17 @@
       pointer-events: none;
     }
 
-
-
-    /* =========================
-       INTRO TEXT
-    ========================== */
+    /* INTRO TEXT */
 
     .text {
       position: absolute;
       z-index: 2;
-
       left: 50%;
       top: 50%;
 
       font-size: clamp(42px, 6vw, 105px);
       font-weight: 900;
-
       white-space: nowrap;
-
       letter-spacing: -3px;
 
       text-shadow:
@@ -112,9 +92,9 @@
 
       animation-duration: 2.4s;
       animation-fill-mode: forwards;
-      animation-timing-function: cubic-bezier(.16, .8, .25, 1);
+      animation-timing-function:
+        cubic-bezier(.16, .8, .25, 1);
     }
-
 
     .line1 {
       animation-name: line1;
@@ -130,14 +110,7 @@
       animation-delay: .24s;
     }
 
-    .line4 {
-      animation-name: line4;
-      animation-delay: .36s;
-    }
-
-
     @keyframes line1 {
-
       0% {
         transform:
           translate(-130vw, -80vh)
@@ -153,18 +126,15 @@
 
       100% {
         transform:
-          translate(-50%, calc(-50% - 145px))
+          translate(-50%, calc(-50% - 100px))
           rotate(0)
           scale(1);
 
         opacity: 1;
       }
-
     }
 
-
     @keyframes line2 {
-
       0% {
         transform:
           translate(110vw, -70vh)
@@ -176,18 +146,15 @@
 
       100% {
         transform:
-          translate(-50%, calc(-50% - 50px))
+          translate(-50%, -50%)
           rotate(0)
           scale(1);
 
         opacity: 1;
       }
-
     }
 
-
     @keyframes line3 {
-
       0% {
         transform:
           translate(-100vw, 80vh)
@@ -199,75 +166,42 @@
 
       100% {
         transform:
-          translate(-50%, calc(-50% + 50px))
+          translate(-50%, calc(-50% + 100px))
           rotate(0)
           scale(1);
 
         opacity: 1;
       }
-
     }
 
-
-    @keyframes line4 {
-
-      0% {
-        transform:
-          translate(110vw, 90vh)
-          rotate(-20deg)
-          scale(.4);
-
-        opacity: 0;
-      }
-
-      100% {
-        transform:
-          translate(-50%, calc(-50% + 145px))
-          rotate(0)
-          scale(1);
-
-        opacity: 1;
-      }
-
-    }
-
-
-
-    /* =========================
-       SCROLL INDICATOR
-    ========================== */
+    /* SCROLL INDICATOR */
 
     .scroll {
       position: absolute;
       z-index: 3;
-
       left: 50%;
       bottom: 32px;
 
       transform: translateX(-50%);
-
       text-align: center;
 
       font-size: 12px;
       font-weight: 700;
-
       letter-spacing: 4px;
       text-transform: uppercase;
 
       opacity: .7;
 
-      animation: scrollFloat 1.7s ease-in-out infinite;
+      animation:
+        scrollFloat 1.7s ease-in-out infinite;
     }
-
 
     .scroll-arrow {
       font-size: 28px;
       margin-top: 4px;
     }
 
-
     @keyframes scrollFloat {
-
       0%,
       100% {
         transform:
@@ -280,18 +214,12 @@
           translateX(-50%)
           translateY(10px);
       }
-
     }
 
-
-
-    /* =========================
-       MACEFUL SECTION
-    ========================== */
+    /* MACEFUL SECTION */
 
     .maceful-section {
       position: relative;
-
       min-height: 100vh;
 
       padding:
@@ -309,12 +237,10 @@
       overflow: hidden;
     }
 
-
     .maceful-section::before {
       content: "";
 
       position: absolute;
-
       width: 700px;
       height: 700px;
 
@@ -326,15 +252,10 @@
       background: rgba(255, 0, 0, .12);
 
       filter: blur(140px);
-
       border-radius: 50%;
     }
 
-
-
-    /* =========================
-       MACEFUL HEADER
-    ========================== */
+    /* MACEFUL HEADER */
 
     .maceful-header {
       position: relative;
@@ -343,16 +264,12 @@
       text-align: center;
 
       max-width: 1000px;
-
-      margin:
-        auto
-        auto
-        80px;
+      margin: auto auto 80px;
     }
 
-
     .maceful-logo {
-      width: clamp(130px, 15vw, 220px);
+      width:
+        clamp(130px, 15vw, 220px);
 
       filter:
         drop-shadow(
@@ -372,7 +289,6 @@
         transform 1s cubic-bezier(.15, .8, .2, 1);
     }
 
-
     .maceful-header.visible .maceful-logo {
       opacity: 1;
 
@@ -382,11 +298,11 @@
         rotate(0);
     }
 
-
     .small-title {
       margin-top: 28px;
 
-      font-size: clamp(15px, 1.3vw, 20px);
+      font-size:
+        clamp(15px, 1.3vw, 20px);
 
       letter-spacing: 6px;
 
@@ -395,41 +311,40 @@
       opacity: .55;
     }
 
-
     .maceful-title {
       margin: 8px 0 20px;
 
-      font-size: clamp(45px, 7vw, 115px);
+      font-size:
+        clamp(45px, 7vw, 115px);
 
       font-weight: 900;
 
       letter-spacing: -5px;
-
       line-height: .95;
 
       opacity: 0;
 
-      transform: translateY(60px);
+      transform:
+        translateY(60px);
 
       transition:
         opacity .9s ease .1s,
         transform .9s ease .1s;
     }
 
-
     .maceful-header.visible .maceful-title {
       opacity: 1;
 
-      transform: translateY(0);
+      transform:
+        translateY(0);
     }
-
 
     .maceful-description {
       max-width: 720px;
-
       margin: auto;
 
-      font-size: clamp(15px, 1.5vw, 20px);
+      font-size:
+        clamp(15px, 1.5vw, 20px);
 
       line-height: 1.8;
 
@@ -437,23 +352,21 @@
 
       opacity: 0;
 
-      transform: translateY(40px);
+      transform:
+        translateY(40px);
 
-      transition: .9s ease .25s;
+      transition:
+        .9s ease .25s;
     }
-
 
     .maceful-header.visible .maceful-description {
       opacity: 1;
 
-      transform: translateY(0);
+      transform:
+        translateY(0);
     }
 
-
-
-    /* =========================
-       STATS
-    ========================== */
+    /* STATS */
 
     .stats {
       position: relative;
@@ -461,7 +374,8 @@
 
       max-width: 1100px;
 
-      margin: 0 auto 120px;
+      margin:
+        0 auto 120px;
 
       display: grid;
 
@@ -471,10 +385,8 @@
       gap: 20px;
     }
 
-
     .stat {
       padding: 38px 20px;
-
       text-align: center;
 
       border:
@@ -504,7 +416,6 @@
         border-color .25s ease;
     }
 
-
     .stat.visible {
       opacity: 1;
 
@@ -512,7 +423,6 @@
         translateY(0)
         scale(1);
     }
-
 
     .stat:hover {
       transform:
@@ -523,7 +433,6 @@
         rgba(255, 255, 255, .28);
     }
 
-
     .stat-number {
       font-size:
         clamp(42px, 5vw, 75px);
@@ -532,7 +441,6 @@
 
       letter-spacing: -3px;
     }
-
 
     .stat-label {
       margin-top: 8px;
@@ -546,18 +454,13 @@
       color: #9d9d9d;
     }
 
-
-
-    /* =========================
-       IMAGE SHOWCASE
-    ========================== */
+    /* IMAGE SHOWCASE */
 
     .showcase {
       position: relative;
       z-index: 2;
 
       max-width: 1450px;
-
       margin: auto;
 
       display: grid;
@@ -567,7 +470,6 @@
 
       gap: 25px;
     }
-
 
     .image-card {
       position: relative;
@@ -591,7 +493,6 @@
         opacity 1s ease;
     }
 
-
     .image-card img {
       width: 100%;
       height: 100%;
@@ -605,12 +506,10 @@
         filter .8s ease;
     }
 
-
     .image-card::after {
       content: "";
 
       position: absolute;
-
       inset: 0;
 
       background:
@@ -622,16 +521,13 @@
       pointer-events: none;
     }
 
-
     .image-card:hover img {
       transform: scale(1.07);
     }
 
-
     .image-card:hover {
       z-index: 5;
     }
-
 
     .image1 {
       grid-column:
@@ -649,7 +545,6 @@
         scale(.92);
     }
 
-
     .image2 {
       grid-column:
         1 / 7;
@@ -660,7 +555,6 @@
         translateX(-150px)
         rotate(-5deg);
     }
-
 
     .image3 {
       grid-column:
@@ -673,7 +567,6 @@
         rotate(5deg);
     }
 
-
     .image-card.visible {
       opacity: 1;
 
@@ -683,11 +576,7 @@
         scale(1);
     }
 
-
-
-    /* =========================
-       FOOTER
-    ========================== */
+    /* FOOTER */
 
     .footer {
       text-align: center;
@@ -704,19 +593,13 @@
       color: #666;
     }
 
-
-
-    /* =========================
-       DISCLAIMER TICKER
-    ========================== */
+    /* DISCLAIMER */
 
     .disclaimer-bar {
       position: relative;
-
       z-index: 10;
 
       width: 100%;
-
       overflow: hidden;
 
       padding: 18px 0;
@@ -729,7 +612,6 @@
 
       white-space: nowrap;
     }
-
 
     .disclaimer-track {
       display: flex;
@@ -745,10 +627,8 @@
         infinite;
     }
 
-
     .disclaimer-item {
       display: flex;
-
       align-items: center;
 
       flex-shrink: 0;
@@ -756,7 +636,6 @@
       padding-right: 70px;
 
       font-size: 12px;
-
       font-weight: 700;
 
       letter-spacing: 2px;
@@ -766,7 +645,6 @@
       color:
         rgba(255, 255, 255, .55);
     }
-
 
     .disclaimer-item::after {
       content: "◆";
@@ -779,9 +657,7 @@
         rgba(255, 255, 255, .25);
     }
 
-
     @keyframes disclaimerMove {
-
       from {
         transform:
           translateX(0);
@@ -791,36 +667,27 @@
         transform:
           translateX(-50%);
       }
-
     }
 
-
-
-    /* =========================
-       MOBILE
-    ========================== */
+    /* MOBILE */
 
     @media(max-width: 800px) {
-
       .hero {
         background-attachment: scroll;
       }
 
-
       .text {
         font-size:
           clamp(
-            27px,
-            7.5vw,
-            58px
+            24px,
+            7vw,
+            56px
           );
 
         letter-spacing: -2px;
       }
 
-
       @keyframes line1 {
-
         0% {
           transform:
             translate(-130vw, -80vh)
@@ -834,17 +701,14 @@
           transform:
             translate(
               -50%,
-              calc(-50% - 100px)
+              calc(-50% - 70px)
             );
 
           opacity: 1;
         }
-
       }
 
-
       @keyframes line2 {
-
         0% {
           transform:
             translate(110vw, -70vh)
@@ -858,17 +722,14 @@
           transform:
             translate(
               -50%,
-              calc(-50% - 35px)
+              -50%
             );
 
           opacity: 1;
         }
-
       }
 
-
       @keyframes line3 {
-
         0% {
           transform:
             translate(-100vw, 80vh)
@@ -882,43 +743,16 @@
           transform:
             translate(
               -50%,
-              calc(-50% + 35px)
+              calc(-50% + 70px)
             );
 
           opacity: 1;
         }
-
       }
-
-
-      @keyframes line4 {
-
-        0% {
-          transform:
-            translate(110vw, 90vh)
-            rotate(-20deg)
-            scale(.4);
-
-          opacity: 0;
-        }
-
-        100% {
-          transform:
-            translate(
-              -50%,
-              calc(-50% + 100px)
-            );
-
-          opacity: 1;
-        }
-
-      }
-
 
       .stats {
         grid-template-columns: 1fr;
       }
-
 
       .image1,
       .image2,
@@ -927,30 +761,24 @@
         height: 300px;
       }
 
-
       .maceful-title {
         letter-spacing: -3px;
       }
-
 
       .disclaimer-bar {
         padding: 15px 0;
       }
 
-
       .disclaimer-item {
         font-size: 10px;
         letter-spacing: 1.5px;
       }
-
     }
 
   </style>
 </head>
 
-
 <body>
-
 
   <!-- HERO -->
 
@@ -961,36 +789,27 @@
     </div>
 
     <div class="text line2">
-      im from antarctica
+      im straterie
     </div>
 
     <div class="text line3">
-      i like cats
+      i do stuff in minecraft
     </div>
-
-    <div class="text line4">
-      and i do stuff lol
-    </div>
-
 
     <div class="scroll">
-
       scroll
 
       <div class="scroll-arrow">
         ↓
       </div>
-
     </div>
 
   </section>
 
 
-
   <!-- MACEFUL -->
 
   <section class="maceful-section">
-
 
     <div class="maceful-header reveal">
 
@@ -1000,17 +819,14 @@
         alt="Maceful"
       >
 
-
       <div class="small-title">
         currently
       </div>
-
 
       <h1 class="maceful-title">
         OWNING<br>
         MACEFUL NETWORK
       </h1>
-
 
       <p class="maceful-description">
         A Minecraft network built around competitive PvP,
@@ -1020,11 +836,9 @@
     </div>
 
 
-
     <!-- STATS -->
 
     <div class="stats">
-
 
       <div class="stat reveal">
 
@@ -1041,7 +855,6 @@
         </div>
 
       </div>
-
 
 
       <div class="stat reveal">
@@ -1061,7 +874,6 @@
       </div>
 
 
-
       <div class="stat reveal">
 
         <div
@@ -1078,15 +890,12 @@
 
       </div>
 
-
     </div>
-
 
 
     <!-- IMAGES -->
 
     <div class="showcase">
-
 
       <div class="image-card image1 reveal">
 
@@ -1096,7 +905,6 @@
         >
 
       </div>
-
 
 
       <div class="image-card image2 reveal">
@@ -1109,7 +917,6 @@
       </div>
 
 
-
       <div class="image-card image3 reveal">
 
         <img
@@ -1119,18 +926,14 @@
 
       </div>
 
-
     </div>
-
 
 
     <div class="footer">
       Maceful Network
     </div>
 
-
   </section>
-
 
 
   <!-- DISCLAIMER -->
@@ -1139,51 +942,33 @@
 
     <div class="disclaimer-track">
 
+      <div class="disclaimer-item">
+        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
+      </div>
 
       <div class="disclaimer-item">
         Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
       </div>
 
+      <div class="disclaimer-item">
+        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
+      </div>
 
       <div class="disclaimer-item">
         Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
       </div>
 
-
       <div class="disclaimer-item">
         Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
       </div>
 
-
       <div class="disclaimer-item">
         Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
       </div>
-
-
-      <div class="disclaimer-item">
-        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
-      </div>
-
-
-      <div class="disclaimer-item">
-        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
-      </div>
-
-
-      <div class="disclaimer-item">
-        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
-      </div>
-
-
-      <div class="disclaimer-item">
-        Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
-      </div>
-
 
     </div>
 
   </div>
-
 
 
   <script>
@@ -1192,7 +977,6 @@
 
     const observer =
       new IntersectionObserver(
-
         entries => {
 
           entries.forEach(entry => {
@@ -1202,7 +986,6 @@
               entry.target
                 .classList
                 .add("visible");
-
 
               if (
                 entry.target
@@ -1227,7 +1010,6 @@
         {
           threshold: 0.18
         }
-
       );
 
 
@@ -1240,7 +1022,6 @@
       });
 
 
-
     /* COUNTERS */
 
     function startCounter(element) {
@@ -1249,28 +1030,21 @@
         return;
       }
 
-
       element.dataset.started = "true";
-
 
       const target =
         Number(element.dataset.target);
 
-
       const prefix =
         element.dataset.prefix || "";
-
 
       const suffix =
         element.dataset.suffix || "";
 
-
       const duration = 1600;
-
 
       const start =
         performance.now();
-
 
 
       function update(currentTime) {
@@ -1281,7 +1055,6 @@
             1
           );
 
-
         const ease =
           1 -
           Math.pow(
@@ -1289,12 +1062,10 @@
             4
           );
 
-
         const value =
           Math.floor(
             target * ease
           );
-
 
         element.textContent =
           prefix +
@@ -1310,11 +1081,9 @@
 
       }
 
-
       requestAnimationFrame(update);
 
     }
-
 
 
     /* HERO PARALLAX */
@@ -1326,10 +1095,8 @@
         const scrollY =
           window.scrollY;
 
-
         const hero =
           document.querySelector(".hero");
-
 
         if (
           scrollY <
@@ -1346,11 +1113,9 @@
       {
         passive: true
       }
-
     );
 
   </script>
-
 
 </body>
 </html>
