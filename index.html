@@ -18,6 +18,9 @@
 
     html {
       scroll-behavior: smooth;
+
+      /* Firefox */
+      scrollbar-width: none;
     }
 
     body {
@@ -26,7 +29,19 @@
       color: white;
       font-family: "Montserrat", sans-serif;
       overflow-x: hidden;
+
+      /* Edge / old IE */
+      -ms-overflow-style: none;
     }
+
+    /* Chrome / Edge / Safari */
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
 
 
     /* =========================
@@ -35,7 +50,6 @@
 
     .hero {
       position: relative;
-
       width: 100%;
       height: 100vh;
 
@@ -71,6 +85,7 @@
     }
 
 
+
     /* =========================
        INTRO TEXT
     ========================== */
@@ -97,8 +112,7 @@
 
       animation-duration: 2.4s;
       animation-fill-mode: forwards;
-      animation-timing-function:
-        cubic-bezier(.16, .8, .25, 1);
+      animation-timing-function: cubic-bezier(.16, .8, .25, 1);
     }
 
 
@@ -218,6 +232,7 @@
     }
 
 
+
     /* =========================
        SCROLL INDICATOR
     ========================== */
@@ -241,8 +256,7 @@
 
       opacity: .7;
 
-      animation:
-        scrollFloat 1.7s ease-in-out infinite;
+      animation: scrollFloat 1.7s ease-in-out infinite;
     }
 
 
@@ -268,6 +282,7 @@
       }
 
     }
+
 
 
     /* =========================
@@ -308,13 +323,13 @@
 
       transform: translateX(-50%);
 
-      background:
-        rgba(255, 0, 0, .12);
+      background: rgba(255, 0, 0, .12);
 
       filter: blur(140px);
 
       border-radius: 50%;
     }
+
 
 
     /* =========================
@@ -337,8 +352,7 @@
 
 
     .maceful-logo {
-      width:
-        clamp(130px, 15vw, 220px);
+      width: clamp(130px, 15vw, 220px);
 
       filter:
         drop-shadow(
@@ -355,14 +369,11 @@
 
       transition:
         opacity .9s ease,
-        transform 1s
-        cubic-bezier(.15, .8, .2, 1);
+        transform 1s cubic-bezier(.15, .8, .2, 1);
     }
 
 
-    .maceful-header.visible
-    .maceful-logo {
-
+    .maceful-header.visible .maceful-logo {
       opacity: 1;
 
       transform:
@@ -375,8 +386,7 @@
     .small-title {
       margin-top: 28px;
 
-      font-size:
-        clamp(15px, 1.3vw, 20px);
+      font-size: clamp(15px, 1.3vw, 20px);
 
       letter-spacing: 6px;
 
@@ -387,11 +397,9 @@
 
 
     .maceful-title {
-      margin:
-        8px 0 20px;
+      margin: 8px 0 20px;
 
-      font-size:
-        clamp(45px, 7vw, 115px);
+      font-size: clamp(45px, 7vw, 115px);
 
       font-weight: 900;
 
@@ -401,8 +409,7 @@
 
       opacity: 0;
 
-      transform:
-        translateY(60px);
+      transform: translateY(60px);
 
       transition:
         opacity .9s ease .1s,
@@ -410,13 +417,10 @@
     }
 
 
-    .maceful-header.visible
-    .maceful-title {
-
+    .maceful-header.visible .maceful-title {
       opacity: 1;
 
-      transform:
-        translateY(0);
+      transform: translateY(0);
     }
 
 
@@ -425,8 +429,7 @@
 
       margin: auto;
 
-      font-size:
-        clamp(15px, 1.5vw, 20px);
+      font-size: clamp(15px, 1.5vw, 20px);
 
       line-height: 1.8;
 
@@ -434,22 +437,18 @@
 
       opacity: 0;
 
-      transform:
-        translateY(40px);
+      transform: translateY(40px);
 
-      transition:
-        .9s ease .25s;
+      transition: .9s ease .25s;
     }
 
 
-    .maceful-header.visible
-    .maceful-description {
-
+    .maceful-header.visible .maceful-description {
       opacity: 1;
 
-      transform:
-        translateY(0);
+      transform: translateY(0);
     }
+
 
 
     /* =========================
@@ -462,8 +461,7 @@
 
       max-width: 1100px;
 
-      margin:
-        0 auto 120px;
+      margin: 0 auto 120px;
 
       display: grid;
 
@@ -475,8 +473,7 @@
 
 
     .stat {
-      padding:
-        38px 20px;
+      padding: 38px 20px;
 
       text-align: center;
 
@@ -493,8 +490,7 @@
 
       border-radius: 22px;
 
-      backdrop-filter:
-        blur(15px);
+      backdrop-filter: blur(15px);
 
       opacity: 0;
 
@@ -503,11 +499,8 @@
         scale(.9);
 
       transition:
-        transform .8s
-        cubic-bezier(.15, .8, .2, 1),
-
+        transform .8s cubic-bezier(.15, .8, .2, 1),
         opacity .8s ease,
-
         border-color .25s ease;
     }
 
@@ -554,6 +547,7 @@
     }
 
 
+
     /* =========================
        IMAGE SHOWCASE
     ========================== */
@@ -593,9 +587,7 @@
         rgba(0, 0, 0, .55);
 
       transition:
-        transform 1s
-        cubic-bezier(.15, .8, .2, 1),
-
+        transform 1s cubic-bezier(.15, .8, .2, 1),
         opacity 1s ease;
     }
 
@@ -609,9 +601,7 @@
       object-fit: cover;
 
       transition:
-        transform .8s
-        cubic-bezier(.15, .8, .2, 1),
-
+        transform .8s cubic-bezier(.15, .8, .2, 1),
         filter .8s ease;
     }
 
@@ -634,8 +624,7 @@
 
 
     .image-card:hover img {
-      transform:
-        scale(1.07);
+      transform: scale(1.07);
     }
 
 
@@ -695,6 +684,7 @@
     }
 
 
+
     /* =========================
        FOOTER
     ========================== */
@@ -715,6 +705,7 @@
     }
 
 
+
     /* =========================
        DISCLAIMER TICKER
     ========================== */
@@ -728,18 +719,13 @@
 
       overflow: hidden;
 
-      padding:
-        18px 0;
+      padding: 18px 0;
 
       background: #000;
 
       border-top:
         1px solid
         rgba(255, 255, 255, .12);
-
-      border-bottom:
-        1px solid
-        rgba(255, 255, 255, .05);
 
       white-space: nowrap;
     }
@@ -768,10 +754,6 @@
       flex-shrink: 0;
 
       padding-right: 70px;
-
-      font-family:
-        "Montserrat",
-        sans-serif;
 
       font-size: 12px;
 
@@ -813,6 +795,7 @@
     }
 
 
+
     /* =========================
        MOBILE
     ========================== */
@@ -820,8 +803,7 @@
     @media(max-width: 800px) {
 
       .hero {
-        background-attachment:
-          scroll;
+        background-attachment: scroll;
       }
 
 
@@ -833,8 +815,7 @@
             58px
           );
 
-        letter-spacing:
-          -2px;
+        letter-spacing: -2px;
       }
 
 
@@ -935,62 +916,31 @@
 
 
       .stats {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
 
       .image1,
       .image2,
       .image3 {
-
-        grid-column:
-          1 / 13;
-
+        grid-column: 1 / 13;
         height: 300px;
       }
 
 
       .maceful-title {
-        letter-spacing:
-          -3px;
+        letter-spacing: -3px;
       }
 
 
       .disclaimer-bar {
-        padding:
-          15px 0;
+        padding: 15px 0;
       }
 
 
       .disclaimer-item {
-        font-size:
-          10px;
-
-        letter-spacing:
-          1.5px;
-      }
-
-    }
-
-
-    /* =========================
-       REDUCED MOTION
-    ========================== */
-
-    @media (
-      prefers-reduced-motion:
-      reduce
-    ) {
-
-      html {
-        scroll-behavior:
-          auto;
-      }
-
-      .disclaimer-track {
-        animation-duration:
-          60s;
+        font-size: 10px;
+        letter-spacing: 1.5px;
       }
 
     }
@@ -1002,9 +952,7 @@
 <body>
 
 
-  <!-- =========================
-       HERO
-  ========================== -->
+  <!-- HERO -->
 
   <section class="hero">
 
@@ -1039,9 +987,7 @@
 
 
 
-  <!-- =========================
-       MACEFUL
-  ========================== -->
+  <!-- MACEFUL -->
 
   <section class="maceful-section">
 
@@ -1075,9 +1021,7 @@
 
 
 
-    <!-- =========================
-         STATS
-    ========================== -->
+    <!-- STATS -->
 
     <div class="stats">
 
@@ -1139,16 +1083,12 @@
 
 
 
-    <!-- =========================
-         IMAGES
-    ========================== -->
+    <!-- IMAGES -->
 
     <div class="showcase">
 
 
-      <div
-        class="image-card image1 reveal"
-      >
+      <div class="image-card image1 reveal">
 
         <img
           src="macefuldcbanner.png"
@@ -1159,9 +1099,7 @@
 
 
 
-      <div
-        class="image-card image2 reveal"
-      >
+      <div class="image-card image2 reveal">
 
         <img
           src="imagetuff1.webp"
@@ -1172,9 +1110,7 @@
 
 
 
-      <div
-        class="image-card image3 reveal"
-      >
+      <div class="image-card image3 reveal">
 
         <img
           src="imagetuff.webp"
@@ -1188,8 +1124,6 @@
 
 
 
-    <!-- FOOTER -->
-
     <div class="footer">
       Maceful Network
     </div>
@@ -1199,9 +1133,7 @@
 
 
 
-  <!-- =========================
-       MOJANG DISCLAIMER
-  ========================== -->
+  <!-- DISCLAIMER -->
 
   <div class="disclaimer-bar">
 
@@ -1226,9 +1158,6 @@
       <div class="disclaimer-item">
         Maceful Network is not affiliated with Mojang AB or Microsoft. Minecraft is a trademark of Mojang AB.
       </div>
-
-
-      <!-- DUPLICATES FOR SMOOTH LOOP -->
 
 
       <div class="disclaimer-item">
@@ -1259,49 +1188,39 @@
 
   <script>
 
-    /* =========================
-       SCROLL REVEALS
-    ========================== */
+    /* SCROLL REVEALS */
 
     const observer =
       new IntersectionObserver(
 
         entries => {
 
-          entries.forEach(
-            entry => {
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target
+                .classList
+                .add("visible");
+
 
               if (
-                entry.isIntersecting
-              ) {
-
                 entry.target
                   .classList
-                  .add("visible");
+                  .contains("stat")
+              ) {
 
-
-                if (
+                const counter =
                   entry.target
-                    .classList
-                    .contains("stat")
-                ) {
+                    .querySelector(".counter");
 
-                  const counter =
-                    entry.target
-                      .querySelector(
-                        ".counter"
-                      );
-
-                  startCounter(
-                    counter
-                  );
-
-                }
+                startCounter(counter);
 
               }
 
             }
-          );
+
+          });
 
         },
 
@@ -1313,58 +1232,40 @@
 
 
     document
-      .querySelectorAll(
-        ".reveal"
-      )
-      .forEach(
-        element => {
+      .querySelectorAll(".reveal")
+      .forEach(element => {
 
-          observer.observe(
-            element
-          );
+        observer.observe(element);
 
-        }
-      );
+      });
 
 
 
-    /* =========================
-       NUMBER COUNTERS
-    ========================== */
+    /* COUNTERS */
 
-    function startCounter(
-      element
-    ) {
+    function startCounter(element) {
 
-      if (
-        element.dataset.started
-      ) {
+      if (element.dataset.started) {
         return;
       }
 
 
-      element.dataset.started =
-        "true";
+      element.dataset.started = "true";
 
 
       const target =
-        Number(
-          element.dataset.target
-        );
+        Number(element.dataset.target);
 
 
       const prefix =
-        element.dataset.prefix
-        || "";
+        element.dataset.prefix || "";
 
 
       const suffix =
-        element.dataset.suffix
-        || "";
+        element.dataset.suffix || "";
 
 
-      const duration =
-        1600;
+      const duration = 1600;
 
 
       const start =
@@ -1372,21 +1273,12 @@
 
 
 
-      function update(
-        currentTime
-      ) {
+      function update(currentTime) {
 
         const progress =
           Math.min(
-
-            (
-              currentTime
-              - start
-            )
-            / duration,
-
+            (currentTime - start) / duration,
             1
-
           );
 
 
@@ -1405,35 +1297,27 @@
 
 
         element.textContent =
-          prefix
-          + value.toLocaleString()
-          + suffix;
+          prefix +
+          value.toLocaleString() +
+          suffix;
 
 
-        if (
-          progress < 1
-        ) {
+        if (progress < 1) {
 
-          requestAnimationFrame(
-            update
-          );
+          requestAnimationFrame(update);
 
         }
 
       }
 
 
-      requestAnimationFrame(
-        update
-      );
+      requestAnimationFrame(update);
 
     }
 
 
 
-    /* =========================
-       HERO PARALLAX
-    ========================== */
+    /* HERO PARALLAX */
 
     window.addEventListener(
       "scroll",
@@ -1444,19 +1328,15 @@
 
 
         const hero =
-          document.querySelector(
-            ".hero"
-          );
+          document.querySelector(".hero");
 
 
         if (
-          scrollY
-          <
+          scrollY <
           window.innerHeight
         ) {
 
-          hero.style
-            .backgroundPosition =
+          hero.style.backgroundPosition =
             `center calc(50% + ${scrollY * .18}px)`;
 
         }
